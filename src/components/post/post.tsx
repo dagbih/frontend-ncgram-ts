@@ -17,6 +17,7 @@ const Post = ({
   Content,
   Sender,
   ImageUrl,
+  Timestamp,
   StatusList
 }: IPostProps) => {
   return (
