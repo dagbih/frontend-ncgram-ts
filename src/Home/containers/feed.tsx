@@ -1,10 +1,7 @@
 import 'isomorphic-fetch';
 import * as React from 'react';
-import Post, { IPostProps } from "../post/post";
-
-interface IFeedState {
-  posts: []
-}
+import Post from "../components/post";
+import { IPost, IFeedState } from "../interfaces";
 
 export class Feed extends React.Component <{}, IFeedState>{
 
@@ -24,7 +21,7 @@ export class Feed extends React.Component <{}, IFeedState>{
     return (
       <div>
         {
-          this.state.posts.map((post:IPostProps) => 
+          this.state.posts.map((post:IPost) => 
            post.imageUrl !== "" &&
           <Post {...post} key={post.id}/>
           )

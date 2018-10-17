@@ -1,18 +1,12 @@
 import * as React from "react";
 import "./post.css";
-
-export interface IPostProps {
-  content: string,
-  id: number,
-  imageUrl: string,
-  sender: string,
-}
+import { IPost } from "../interfaces";
 
 const Post = ({
   content,
   sender,
   imageUrl
-}: IPostProps) => {
+}: IPost) => {
   return (
   <div className="post__container">
     <div className="post__title">
