@@ -1,7 +1,7 @@
 import 'isomorphic-fetch';
 import * as React from 'react';
 import Post from "../components/post";
-import { IPost, IFeedState } from "../interfaces";
+import { IFeedState, IPost } from "../interfaces";
 
 export class Feed extends React.Component <{}, IFeedState>{
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './App.css';
-import { Feed } from './components/feed/feed';
+import { Feed } from './Home/containers/feed';
 import Netcompany from "./Netcompany.png";
 
 class App extends React.Component {

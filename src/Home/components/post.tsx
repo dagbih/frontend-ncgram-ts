@@ -1,6 +1,6 @@
 import * as React from "react";
-import "./post.css";
 import { IPost } from "../interfaces";
+import "./post.css";
 
 const Post = ({
   content,
