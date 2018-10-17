@@ -2,6 +2,7 @@ import 'isomorphic-fetch';
 import * as React from 'react';
 import Post from "../components/post";
 import { IFeedState, IPost } from "../interfaces";
+import "./feed.css";
 
 export class Feed extends React.Component <{}, IFeedState>{
 
@@ -19,7 +20,7 @@ export class Feed extends React.Component <{}, IFeedState>{
 
   public render() {
     return (
-      <div>
+      <div className="feed__container">
         {
           this.state.posts.map((post:IPost) => 
            post.imageUrl !== "" &&

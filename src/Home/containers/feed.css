@@ -1,0 +1,12 @@
+.feed__container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.feed__container > div {
+  flex: 1 1 auto;
+  padding: 2em;
+  max-width: 20em;
+}
