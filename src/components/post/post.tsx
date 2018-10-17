@@ -1,35 +1,28 @@
 import * as React from "react";
 import "./post.css";
 
-interface IPostProps {
-  Content: string,
-  Id: number,
-  ImageUrl: string,
-  Sender: string,
-  StatusList : [any],
-  Timestamp: Date
-  Title: string,
+export interface IPostProps {
+  content: string,
+  id: number,
+  imageUrl: string,
+  sender: string,
 }
 
 const Post = ({
-  Id,
-  Title,
-  Content,
-  Sender,
-  ImageUrl,
-  Timestamp,
-  StatusList
+  content,
+  sender,
+  imageUrl
 }: IPostProps) => {
   return (
   <div className="post__container">
     <div className="post__title">
-      <div>{Sender}</div>
+      <div>{sender}</div>
     </div>
     <div className="post__image">
-      <img src={ImageUrl} className="post__image--fit"/>
+      <img src={imageUrl} className="post__image--fit"/>
     </div>
     <div className="post__content">
-      {Content}
+      {content}
     </div>
   </div>
   );

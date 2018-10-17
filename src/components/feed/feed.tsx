@@ -1,8 +1,12 @@
 import 'isomorphic-fetch';
 import * as React from 'react';
-import Post from "../post/post";
+import Post, { IPostProps } from "../post/post";
 
-export class Feed extends React.Component <{}, {posts: []}>{
+interface IFeedState {
+  posts: []
+}
+
+export class Feed extends React.Component <{}, IFeedState>{
 
   constructor(props: any) {
     super(props);
@@ -16,31 +20,22 @@ export class Feed extends React.Component <{}, {posts: []}>{
       .then(response => this.setState({posts: response}));
   }
 
-  public fetchPosts = () => {
-    return fetch('https://faghelg.herokuapp.com/messages')
-      .then(response => response.json());
-  };
-
   public render() {
     return (
       <div>
         {
-          this.state.posts.map((post:any) => 
+          this.state.posts.map((post:IPostProps) => 
            post.imageUrl !== "" &&
-          <Post 
-            Id={post.id} 
-            Title={post.title} 
-            Content={post.content} 
-            Sender={post.sender}
-            ImageUrl={post.imageUrl}
-            Timestamp={new Date(post.timestamp)}
-            StatusList={post.statusList}
-            key={post.id}/>
-          
+          <Post {...post} key={post.id}/>
           )
         }
 
       </div>
     );
   }
+
+  private fetchPosts = () => {
+    return fetch('https://faghelg.herokuapp.com/messages')
+      .then(response => response.json());
+  };
 }
